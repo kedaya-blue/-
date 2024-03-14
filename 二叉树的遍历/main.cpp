@@ -49,15 +49,15 @@ void EnQueue(sqQueue& Q, BiTree p) {
 		exit(1);
 	}
 	Q.data[Q.rear] = p;
-	Q.rear++;
+	Q.rear=(Q.rear+1)%Maxsize;
 }
 void DeQueue(sqQueue& Q, BiTree& p) {
-	if (Q.front == Q.rear && Q.front == 0) {
+	if (Q.front == Q.rear) {
 		cout << "队列为空" << endl;
 		exit(1);
 	}
 	p = Q.data[Q.front];
-	Q.front++;
+	Q.front=(Q.front+1)%Maxsize;
 	cout << p->data << " ";
 }
 bool isEmpty(sqQueue Q) {
