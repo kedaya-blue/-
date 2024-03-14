@@ -34,7 +34,7 @@ void DeQueue(sqQueue& Q, int& x) {
 }
 int QueueLength(sqQueue Q) {
 	int x;
-	x = (Q.rear - Q.front) % Maxsize;
+	x = (Q.rear - Q.front+Maxsize) % Maxsize;
 	return x;
 }
 int main()
